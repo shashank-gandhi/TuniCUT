@@ -315,9 +315,9 @@ NonTempEnd=[G_end[0] for G_end in c.execute("SELECT End FROM NonTemplateguideRNA
 NonTempgRNA=[seq[0][11:30] for seq in c.execute("SELECT guideRNA FROM NonTemplateguideRNA")]
 
 TempForwardPrimer = ["G"+i+"GTTTAAGAGCTATGCTGGAAACAG" for i in TempgRNA]
-TempRevPrimer = [str(Seq(i).reverse_complement())+"C"+"catctataccatcggatgccttc" for i in TempgRNA]
+TempRevPrimer = [str(Seq(i).reverse_complement())+"C"+"atctataccatcggatgccttc" for i in TempgRNA]
 NonTempForwardPrimer = ["G"+i+"GTTTAAGAGCTATGCTGGAAACAG" for i in NonTempgRNA]
-NonTempRevPrimer = [str(Seq(i).reverse_complement())+"C"+"catctataccatcggatgccttc" for i in NonTempgRNA]
+NonTempRevPrimer = [str(Seq(i).reverse_complement())+"C"+"atctataccatcggatgccttc" for i in NonTempgRNA]
 
 with open(options.output, "w+") as WriteHandle:
     header = "Gene\tStrand\tPAM\tStart\tEnd\tGuideRNA\tPredictedScore\tsgRNAFwdPrimer\tU6RevPrimer\n"
